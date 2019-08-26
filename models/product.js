@@ -1,5 +1,18 @@
 var mongoose = require('mongoose');
 
+
+var reviewSchema = new Schema({
+    content: String,
+    rating: {
+        type: Number,
+        min: 1,
+        max: 5,
+        default: 5
+    }
+}, {
+    timestamps: true
+});
+
 var productSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -19,7 +32,8 @@ var productSchema = new mongoose.Schema({
     },
     image: {
         type: String,
-    }
+    },
+    review: [reviewSchema]
 }, {
     timestamps: true
 });
