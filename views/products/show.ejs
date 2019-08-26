@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <img src="/public/images/<%= product.image %>">
+    <br>
+    <div>Price: </div>
+    <div>$<%= product.price %></div>
+    <div>Rating: </div>
+    <div><%= product.condition %></div>
+    <div>Description: </div>
+    <div><%= product.description %></div>
+</section>
+
+<%- include('../partials/footer') %>
