@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<form action="/products" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name">
+    <label>Price:</label>
+    <input type="text" name="price">
+    <label>Condition</label>
+    <select name="condition">
+        <option value="New">New</option>
+        <option value="Used">Used</option>
+    </select>
+    <label>Description:</label>
+    <textarea name="description"></textarea>
+</form>
+
+<%- include('../partials/footer') %>
