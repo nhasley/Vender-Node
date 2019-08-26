@@ -34,7 +34,8 @@ var productSchema = new Schema({
     image: {
         type: String,
     },
-    reviews: [reviewSchema]
+    reviews: [reviewSchema],
+    googleId: String
 }, {
     timestamps: true
 });
