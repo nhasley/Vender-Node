@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+<ul>
+    <% products.forEach(function(m) { %>
+    <li>
+        <div>
+            <div><img src="/public/images/<%= m.image %>"></div>
+            <div><%= m.name %></div>
+            <div>$<%= m.price %></div>
+            <div><a href="/products/<%= m._id %>">DETAILS</a></div>
+        </div>
+    </li>
+    <% }); %>
+</ul>
+
+<%- include('../partials/footer') %>
