@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<form action="/products" method="POST">
+<form id="new-form" action="/products" method="POST">
     <label>Name:</label>
     <input type="text" name="name">
     <label>Price:</label>
@@ -12,6 +12,9 @@
     </select>
     <label>Description:</label>
     <textarea name="description"></textarea>
+    <label>Photo:</label>
+    <input type="file" accept="image/*" name="photo" action="../../public/images/" enctype="multipart/form-data">
+    <input class="submit" type="submit" value="Submit">
 </form>
 
 <%- include('../partials/footer') %>

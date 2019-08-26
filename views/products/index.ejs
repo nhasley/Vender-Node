@@ -1,13 +1,13 @@
-<%- include('..partials/header') %>
-<ul>
+<%- include('../partials/header') %>
+<ul class="grid" id="list">
     <% products.forEach(function(m) { %>
     <li>
-        <div>
-            <div><img src="/public/images/<%= m.image %>"></div>
-            <div><%= m.name %></div>
-            <div>$<%= m.price %></div>
-            <div><a href="/products/<%= m._id %>">DETAILS</a></div>
-        </div>
+        <figure class="grid__figure">
+            <div class="fig"><img src="/public/images/<%= m.image %>"></div>
+            <div class=" fig"><%= m.name %></div>
+            <div class="fig">$<%= m.price %></div>
+            <div class="fig"><a href="/products/<%= m._id %>">DETAILS</a></div>
+        </figure>
     </li>
     <% }); %>
 </ul>

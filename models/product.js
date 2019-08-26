@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-
+var Schema = mongoose.Schema;
 
 var reviewSchema = new Schema({
     content: String,
@@ -13,7 +13,7 @@ var reviewSchema = new Schema({
     timestamps: true
 });
 
-var productSchema = new mongoose.Schema({
+var productSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -24,6 +24,7 @@ var productSchema = new mongoose.Schema({
     },
     condition: {
         type: String,
+        default: "New",
         required: true
     },
     description: {
@@ -33,10 +34,9 @@ var productSchema = new mongoose.Schema({
     image: {
         type: String,
     },
-    review: [reviewSchema]
+    reviews: [reviewSchema]
 }, {
     timestamps: true
 });
-
 
 module.exports = mongoose.model('Product', productSchema);
