@@ -3,8 +3,8 @@ var Product = require('../models/product')
 module.exports = {
     index,
     new: newProduct,
-    show
-    // create,
+    show,
+    create
     // update,
     // delete: deleteOne
 }
@@ -32,4 +32,12 @@ function show(req, res) {
                 product
             });
         });
+}
+
+function create(req, res) {
+    var product = new Product(req.body);
+    product.save(function (err) {
+        if (err) return res.redirect('/products/new');
+        res.redirect(`/products/${product._id}`);
+    });
 }

@@ -6,5 +6,6 @@ var productsCtrl = require('../controllers/products')
 router.get('/', productsCtrl.index);
 router.get('/new', productsCtrl.new);
 router.get('/:id', productsCtrl.show);
+router.post('/', productsCtrl.create);
 
 module.exports = router;
