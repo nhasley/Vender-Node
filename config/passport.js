@@ -34,7 +34,6 @@ passport.serializeUser(function (user, done) {
     done(null, user.id);
 });
 
-// The id here is from the MongoDB id
 passport.deserializeUser(function (id, done) {
     User.findById(id, function (err, user) {
         done(err, user);
