@@ -14,11 +14,7 @@
         <a href="/" class="brand">Vender</a>
         <a class="a" href="/products/new" <%- title === 'Add Product' ? 'class="active"' : '' %>>SELL</a>
         <a class="a" href="/products" <%- title === 'All Products' ? 'class="active"' : '' %>>BUY</a>
-        <% if (user) { %>
         <a href="/logout">LOG OUT</a>
-        <% } else { %>
-        <a href="/auth/google">LOGIN</a>
-        <% } %>
     </nav>
     <main>
         <h1><%= title %></h1>
