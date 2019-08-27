@@ -145,11 +145,7 @@ li {
 }
 
 .submit {
-  /* margin-top: 40px;
-  padding: 40px; */
   color: rgb(27, 70, 99);
-  /* font-family: Helvetica;
-  font-size: 50px; */
 }
 
 input,
@@ -169,15 +165,37 @@ figure {
 }
 
 .grid {
+  margin-top: 40px;
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 90%;
-  grid-gap: 1em;
-
+  text-align: center;
+  grid-gap: 3em;
+  padding: 2em 1em;
+  grid-template-columns: 20em 20em 20em;
+  grid-template-rows: auto;
+  grid-template-areas: "img img img"
+    "img img img"
+    "img img img"
+    "img img img"
 }
 
+
 img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
+  width: auto;
+  width: 200px;
+  height: 200px;
+}
+
+.pimg {
+  grid-area: img;
+  margin-bottom: 40px;
+  height: auto;
+  width: auto;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.review {
+  text-align: center;
+  margin-top: 100px
 }

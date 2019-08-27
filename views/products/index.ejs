@@ -3,8 +3,8 @@
     <% products.forEach(function(m) { %>
     <li>
         <figure class="grid__figure">
-            <div class="fig"><img src="/public/images/<%= m.image %>"></div>
-            <div class=" fig"><%= m.name %></div>
+            <div class="fimg"><a href="/products/<%= m._id %>"><img src="/images/<%= m.image %>"></a></div>
+            <div class="fig"><%= m.name %></div>
             <div class="fig">$<%= m.price %></div>
             <div class="fig"><a href="/products/<%= m._id %>">DETAILS</a></div>
         </figure>
