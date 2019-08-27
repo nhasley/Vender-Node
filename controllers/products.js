@@ -38,6 +38,9 @@ function create(req, res) {
     var product = new Product(req.body);
     product.save(function (err) {
         if (err) return res.redirect('/products/new');
-        res.redirect(`/products/${product._id}`);
+        res.redirect(`/products/${product._id}`, {
+            user: req.user,
+            name: req.query.name
+        });
     });
 }
