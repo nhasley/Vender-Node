@@ -1,14 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title><%= title %></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title><%= title %></title>
 </head>
 
 <body>
-  <h1><%= title %></h1>
-  <p>Welcome to <%= title %></p>
+  <nav>
+    <h1 class="brand">Vender</h1>
+    <a href="/products/new" <%- title === 'Add Product' ? 'class="active"' : '' %>>SELL</a>
+    <a href="/products" <%- title === 'All Products' ? 'class="active"' : '' %>>BUY</a>
+    <% if (user) { %>
+    <a href="/logout">LOG OUT</a>
+    <% } else { %>
+    <a href="/auth/google">LOGIN</a>
+    <% } %>
+  </nav>
+  <main>
+    <p>Welcome to <%= title %></p>
+  </main>
 </body>
 
 </html>
