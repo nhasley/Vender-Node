@@ -206,3 +206,7 @@ h6 {
   font-size: 15vmin;
   margin: 50px;
 }
+
+.btn-delete {
+  background-color: red;
+}

@@ -4,9 +4,9 @@ module.exports = {
     index,
     new: newProduct,
     show,
-    create
+    create,
     // update,
-    // delete: deleteOne
+    delete: deleteOne
 }
 
 function index(req, res) {
@@ -42,7 +42,19 @@ function create(req, res) {
     });
 }
 
-// , {
-//     user: req.user,
-//     name: req.query.name
+function deleteOne(req, res) {
+    Product.findByIdAndRemove(req.params.id).then(function (err) {
+        res.redirect('/products');
+    })
+}
+
+// function deleteOne(req, res, next) {
+//     Product.findOne({
+//         'product._id': req.params.id
+//     }, function (err, product) {
+//         product.id(req.params.id).remove();
+//         product.save(function (err) {
+//             res.redirect('/products');
+//         });
+//     });
 // }
