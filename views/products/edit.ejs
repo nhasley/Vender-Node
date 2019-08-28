@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+<form id="new-form" action="/products/<%= product._id %>" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" value="<%=product.name%>">
+    <label>Price:</label>
+    <input type="text" name="price" value="<%=product.price%>">
+    <label>Condition</label>
+    <select name="condition" value="<%=product.condition%>">
+        <option value="New">New</option>
+        <option value="Used">Used</option>
+    </select>
+    <label>Description:</label>
+    <input name="description" value="<%=product.description%>"></input>
+    <label>Photo:</label>
+    <input type="text" name="image" value="<%=product.image%>">
+    <input class="submit" type="submit" value="Submit">
+</form>
+<%- include('../partials/footer') %>

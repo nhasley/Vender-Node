@@ -5,7 +5,7 @@ module.exports = {
     new: newProduct,
     show,
     create,
-    // update,
+    edit,
     delete: deleteOne
 }
 
@@ -46,6 +46,16 @@ function deleteOne(req, res) {
     Product.findByIdAndRemove(req.params.id).then(function (err) {
         res.redirect('/products');
     })
+}
+
+function edit(req, res) {
+    Product.findById(req.params.id)
+        .exec(function (err, product) {
+            res.render(`products/edit`, {
+                title: `Edit ${product.name} Posting`,
+                product
+            });
+        });
 }
 
 // function deleteOne(req, res, next) {

@@ -1,4 +1,12 @@
 <%- include('../partials/header') %>
+<section class="editor">
+    <form action="/products/<%= product._id %>/edit" method="GET" class="secondary-content">
+        <button type="submit" class="btn-update">EDIT</button>
+    </form>
+    <form action="/products/<%= product._id %>?_method=DELETE" method="POST" class="secondary-content">
+        <button type="submit" class="btn-delete">DELETE</button>
+    </form>
+</section>
 
 <img class="pimg" src="/images/<%= product.image %>">
 <section id="show-page">
@@ -8,9 +16,6 @@
     <div><%= product.condition %></div>
     <div>Description: </div>
     <div><%= product.description %></div>
-    <form action="/products/<%= product._id %>?_method=DELETE" method="POST" class="secondary-content">
-        <button type="submit" class="btn-delete">DELETE</button>
-    </form>
 </section>
 
 <br><br>

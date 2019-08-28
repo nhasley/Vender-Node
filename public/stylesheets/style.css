@@ -209,4 +209,17 @@ h6 {
 
 .btn-delete {
   background-color: red;
+  border-radius: 5px;
+}
+
+.btn-update {
+  color: black;
+  margin-right: 20px;
+}
+
+.editor {
+  display: flex;
+  padding: 20px;
+  background-color: rgba(27, 70, 99, .5);
+  margin: 30px;
 }
