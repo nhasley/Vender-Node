@@ -10,8 +10,7 @@ function create(req, res) {
         product.reviews.push(req.body);
         product.save(function (err) {
             res.redirect(`/products/${product._id}`, {
-                user: req.user,
-                name: req.query.name
+                user: req.user
             });
         });
     });
