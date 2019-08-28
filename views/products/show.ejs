@@ -46,7 +46,8 @@
             <td><%= r.content %></td>
             <td><%= r.rating %></td>
             <% if (product._id.equals(user && user._id)) { %>
-            <form action="/facts/<%= fact._id %>?_method=DELETE" method="POST" class="secondary-content">
+            <form action="/products/<%= product._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST"
+                class="secondary-content">
                 <button type="submit" class="btn-small red-text">X</button>
             </form>
             <% } %>

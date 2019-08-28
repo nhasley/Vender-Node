@@ -1,7 +1,7 @@
 ## App Must:
 X Have at least 2 data entities in addition to the "User" Model. One entity that represents the main functional idea for your app and another with a 1:M or M:M relationship with that main entity (embedded or referenced).
 
-☐ Use OAuth authentication. (lesson this week)
+X Use OAuth authentication. (lesson this week)
 
 ☐ Implement basic authorization by restricting access to certain features, such as editing and deleting a resource, to an authenticated user, or the user that created that resource.
 
@@ -9,12 +9,12 @@ X Have at least 2 data entities in addition to the "User" Model. One entity that
 
 X Be styled such that the app looks and feels similar to apps we use on a daily basis - in other words, it should have a consistent and neat presentation.
 
-☐ Be deployed online (Heroku).
+X Be deployed online (Heroku).
 
 Optionally, Your App May:
 ☐ Consume a third-party API.
 
-☐ Expose its own API where it returns data resources as JSON.
+X Expose its own API where it returns data resources as JSON.
 
 ## Necessary Deliverables
 ☐ A working full-stack app that meets or exceeds the above technical requirements, built by you, and hosted on Heroku.
@@ -29,7 +29,11 @@ A buy/sell application similar to Craigslist or Facebook Marketplace.
 # Technologies Used
 HTML, CSS, Javascript, Node.js, Express, MongoDB
 
-☐ Getting Started: In this section include the link to your deployed game and any instructions you deem important.
+# Overview 
 
-#Next Steps:
+Website Link: <https://vender-node.herokuapp.com/>
+
+A Craigslist-esque website to buy and sell products.
+
+#Next Steps
 Add 3rd party API such as Paypal to fulfill payments.
