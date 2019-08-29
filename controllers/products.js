@@ -1,4 +1,5 @@
 var Product = require('../models/product')
+var User = require('../models/user')
 
 module.exports = {
     index,
@@ -11,35 +12,49 @@ module.exports = {
 }
 
 function index(req, res) {
-    Product.find({}, function (err, products) {
+    Product.find({
+        userId: req.user
+    }, function (err, products) {
         res.render('products/index', {
             title: 'For Sale',
+            user: req.user,
             products
         });
     });
 }
 
 function newProduct(req, res) {
-    res.render('products/new', {
-        title: 'Add Product'
-    });
+    Product.find({
+        userId: req.user
+    }, function (err, products) {
+        res.render('products/new', {
+            title: 'Add Product',
+            user: req.user,
+            products
+        });
+    })
 }
+
 
 function show(req, res) {
     Product.findById(req.params.id)
         .exec(function (err, product) {
             res.render('products/show', {
                 title: `${product.name}`,
+                user: req.user,
                 product
             });
         });
 }
 
+// 
 function create(req, res) {
     var product = new Product(req.body);
     product.save(function (err) {
         if (err) return res.redirect('/products/new');
-        res.redirect(`/products`);
+        res.redirect(`/products`, {
+            user: req.user
+        });
     });
 }
 
@@ -54,6 +69,7 @@ function edit(req, res) {
         .exec(function (err, product) {
             res.render(`products/edit`, {
                 title: `Edit ${product.name} Posting`,
+                user: req.user,
                 product
             });
         });
@@ -61,7 +77,6 @@ function edit(req, res) {
 
 function update(req, res) {
     Product.findByIdAndUpdate(req.params.id, req.body, () => {
-        // console.log(req.body);
         res.redirect(`/products`);
     })
 }
