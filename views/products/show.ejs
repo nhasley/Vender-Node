@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<% if (user) { %>
+
 <section class="editor">
     <form action="/products/<%= product._id %>/edit" method="GET" class="secondary-content">
         <button type="submit" class="btn-update">EDIT</button>
@@ -8,9 +8,7 @@
         <button type="submit" class="btn-delete">DELETE</button>
     </form>
 </section>
-<% } else { %>
-<a href="/auth/google">Login to edit</a>
-<% } %>
+
 
 <img class="pimg" src="/images/<%= product.image %>">
 <section id="show-page">
