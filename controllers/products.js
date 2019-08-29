@@ -52,9 +52,7 @@ function create(req, res) {
     var product = new Product(req.body);
     product.save(function (err) {
         if (err) return res.redirect('/products/new');
-        res.redirect(`/products`, {
-            user: req.user
-        });
+        res.redirect(`/products`);
     });
 }
 
@@ -80,14 +78,3 @@ function update(req, res) {
         res.redirect(`/products`);
     })
 }
-
-// function deleteOne(req, res, next) {
-//     Product.findOne({
-//         'product._id': req.params.id
-//     }, function (err, product) {
-//         product.id(req.params.id).remove();
-//         product.save(function (err) {
-//             res.redirect('/products');
-//         });
-//     });
-// }
